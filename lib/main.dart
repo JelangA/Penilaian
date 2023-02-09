@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:penilaian/page/auth/login-page.dart';
+import 'package:penilaian/page/home/home-page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -14,7 +15,7 @@ class MyApp extends StatelessWidget {
     // ignore: prefer_const_constructors
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: const LoginPage(),
+      home: HomePageGU(),
     );
   }
 }

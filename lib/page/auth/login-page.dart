@@ -26,7 +26,10 @@ class _LoginPageState extends State<LoginPage> {
           gradient: LinearGradient(
             begin: Alignment.centerLeft,
             end: Alignment.centerRight,
-            colors: [Color.fromARGB(255, 112, 111, 219), Color.fromARGB(255, 203, 98, 98)],
+            colors: [
+              Color.fromARGB(255, 112, 111, 219),
+              Color.fromARGB(255, 203, 98, 98)
+            ],
           ),
         ),
         child: SingleChildScrollView(
@@ -35,8 +38,16 @@ class _LoginPageState extends State<LoginPage> {
               SizedBox(
                 height: 20,
               ),
-              BigText(text: "E-Task", size: 40,color: Colors.white,),
-              BigText(text: "MAKE EASIER BECOME GREAT EARLIER", size: 18, color: Colors.white,),
+              BigText(
+                text: "E-Task",
+                size: 40,
+                color: Colors.white,
+              ),
+              BigText(
+                text: "MAKE EASIER BECOME GREAT EARLIER",
+                size: 18,
+                color: Colors.white,
+              ),
               SizedBox(
                 height: 40,
               ),
@@ -59,11 +70,20 @@ class _LoginPageState extends State<LoginPage> {
                         text: "Username",
                         size: 17,
                       ),
+                      SizedBox(
+                        height: 10,
+                      ),
                       TextFormField(
                         controller: emailController,
                         decoration: InputDecoration(
+                          filled: true,
+                          fillColor: Colors.white,
+                            enabledBorder: OutlineInputBorder(
+                              borderSide: BorderSide(
+                                  color: Colors.white), //<-- SEE HERE
+                            ),
                             labelText: "Email",
-                            border: OutlineInputBorder(),
+                            // border: OutlineInputBorder(),
                             suffixIcon: Icon(Icons.account_box)),
                       ),
                       SizedBox(
@@ -80,14 +100,24 @@ class _LoginPageState extends State<LoginPage> {
                         controller: passContrloller,
                         obscureText: ishiddenPassword,
                         decoration: InputDecoration(
-                          labelText: "password",
-                          border: OutlineInputBorder(),
+                          filled: true,
+                          fillColor: Colors.white,
+                          enabledBorder: OutlineInputBorder(
+                              borderSide: BorderSide(
+                                  color: Colors.white), //<-- SEE HERE
+                            ),
+                          suffixIconColor: Colors.white,
+                          labelText: "Password",
+                          // border: OutlineInputBorder(),
                           suffixIcon: InkWell(
-                              onTap: toggleViewPassword,
-                              child: Icon(Icons.visibility),),
+                            onTap: toggleViewPassword,
+                            child: Icon(Icons.visibility),
+                          ),
                         ),
                       ),
-                      SizedBox(height: 40,),
+                      SizedBox(
+                        height: 40,
+                      ),
                       new GestureDetector(
                         onTap: () {},
                         child: Container(
@@ -95,7 +125,11 @@ class _LoginPageState extends State<LoginPage> {
                           height: 40,
                           color: Colors.black87,
                           alignment: Alignment.center,
-                          child: BigText(text: "Login",size: 17, color: Colors.white,),
+                          child: BigText(
+                            text: "Login",
+                            size: 17,
+                            color: Colors.white,
+                          ),
                         ),
                       ),
                     ],
