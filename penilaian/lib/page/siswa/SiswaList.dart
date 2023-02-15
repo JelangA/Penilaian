@@ -2,7 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:penilaian/util/dimensions.dart';
-import 'package:penilaian/widget/BigText.dart';
+import 'package:penilaian/widget/BigTextt.dart';
 import 'package:penilaian/widget/textField.dart';
 
 class SiswaList extends StatelessWidget {

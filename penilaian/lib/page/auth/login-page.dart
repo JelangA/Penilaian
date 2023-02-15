@@ -1,7 +1,7 @@
 // ignore_for_file: file_names, prefer_const_constructors, prefer_const_literals_to_create_immutables, unnecessary_new
 import 'package:flutter/material.dart';
 import 'package:penilaian/util/colors.dart';
-import 'package:penilaian/widget/BigText.dart';
+import 'package:penilaian/widget/BigTextt.dart';
 
 import 'package:penilaian/widget/TextStryle.dart';
 import 'package:penilaian/widget/textField.dart';
