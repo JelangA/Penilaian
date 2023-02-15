@@ -3,10 +3,13 @@ import 'package:flutter/material.dart';
 class Contener extends StatelessWidget {
   final Color backGroundColor;
   final double heigh;
+  final double widdh;
   final double opacit;
   final double pleft, pbottom, pright, ptop;
   final double mleft, mbottom, mright, mtop;
   final double radius;
+  final Widget widget;
+  final Alignment ali;
 
   Contener({
     Key? key,
@@ -22,11 +25,15 @@ class Contener extends StatelessWidget {
     this.mright = 0,
     this.mtop = 0,
     this.radius = 0,
+    required this.widget,
+    this.ali = Alignment.topRight, 
+    this.widdh = double.maxFinite,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Container(
+      alignment: ali,
       padding: EdgeInsets.only(
           left: pleft == 0 ? 20 : pleft,
           bottom: pbottom == 0 ? 20 : pbottom,
@@ -38,7 +45,7 @@ class Contener extends StatelessWidget {
           right: mright == 0 ? 10 : mright,
           top: mtop == 0 ? 0 : ptop),
       height: heigh == 0 ? 150 : heigh,
-      width: double.maxFinite,
+      width: widdh,
       decoration: BoxDecoration(
         color: backGroundColor.withOpacity(opacit == 0 ? 0.3 : opacit),
         borderRadius: BorderRadius.all(
@@ -47,6 +54,7 @@ class Contener extends StatelessWidget {
           ),
         ),
       ),
+      child: widget,
     );
   }
 }

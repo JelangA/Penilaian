@@ -1,7 +1,10 @@
 // ignore_for_file: file_names, prefer_const_constructors, prefer_const_literals_to_create_immutables, unnecessary_new
 import 'package:flutter/material.dart';
+import 'package:penilaian/util/colors.dart';
+import 'package:penilaian/widget/BigText.dart';
 
-import 'package:penilaian/widget/bigText.dart';
+import 'package:penilaian/widget/TextStryle.dart';
+import 'package:penilaian/widget/textField.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -26,98 +29,56 @@ class _LoginPageState extends State<LoginPage> {
           gradient: LinearGradient(
             begin: Alignment.centerLeft,
             end: Alignment.centerRight,
-            colors: [
-              Color.fromARGB(255, 112, 111, 219),
-              Color.fromARGB(255, 203, 98, 98)
-            ],
+            colors: [AppColors.backgroundcolor1, AppColors.backgroundcolor2],
           ),
         ),
         child: SingleChildScrollView(
           child: Column(
             children: <Widget>[
-              SizedBox(
-                height: 20,
-              ),
+              SizedBox(height: 20),
+              TextSty(text: "E-Task", size: 40),
               BigText(
-                text: "E-Task",
-                size: 40,
-                color: Colors.white,
-              ),
-              BigText(
-                text: "MAKE EASIER BECOME GREAT EARLIER",
-                size: 18,
-                color: Colors.white,
-              ),
-              SizedBox(
-                height: 40,
-              ),
+                  text: "MAKE EASIER BECOME GREAT EARLIER",
+                  size: 18,
+                  color: Colors.white),
+              SizedBox(height: 40),
               Container(
                 height: 380,
                 width: 330,
                 alignment: Alignment.topCenter,
                 decoration: BoxDecoration(
                   color: Colors.white.withOpacity(0.3),
-                  borderRadius: BorderRadius.all(
-                    Radius.circular(30),
-                  ),
+                  borderRadius: BorderRadius.all(Radius.circular(30)),
                 ),
                 child: SizedBox(
                   width: 250,
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      BigText(
-                        text: "Username",
-                        size: 17,
-                      ),
-                      SizedBox(
-                        height: 10,
-                      ),
-                      TextFormField(
-                        controller: emailController,
-                        decoration: InputDecoration(
-                          filled: true,
-                          fillColor: Colors.white,
-                            enabledBorder: OutlineInputBorder(
-                              borderSide: BorderSide(
-                                  color: Colors.white), //<-- SEE HERE
-                            ),
-                            labelText: "Email",
-                            // border: OutlineInputBorder(),
-                            suffixIcon: Icon(Icons.account_box)),
-                      ),
-                      SizedBox(
-                        height: 20,
-                      ),
-                      BigText(
-                        text: "password",
-                        size: 17,
-                      ),
-                      SizedBox(
-                        height: 10,
-                      ),
+                      BigText(text: "Username", size: 17, color: Colors.black),
+                      SizedBox(height: 10),
+                      TextfieldW(hint: "Username"),
+                      SizedBox(height: 20),
+                      BigText(text: "password", size: 17, color: Colors.black),
+                      SizedBox(height: 10),
                       TextFormField(
                         controller: passContrloller,
                         obscureText: ishiddenPassword,
                         decoration: InputDecoration(
+                          hintText: "Password",
                           filled: true,
                           fillColor: Colors.white,
                           enabledBorder: OutlineInputBorder(
-                              borderSide: BorderSide(
-                                  color: Colors.white), //<-- SEE HERE
-                            ),
-                          suffixIconColor: Colors.white,
-                          labelText: "Password",
+                            borderSide:
+                                BorderSide(color: Colors.white) //<-- SEE HERE
+                          ),
                           // border: OutlineInputBorder(),
                           suffixIcon: InkWell(
-                            onTap: toggleViewPassword,
-                            child: Icon(Icons.visibility),
-                          ),
+                              onTap: toggleViewPassword,
+                              child: Icon(Icons.visibility)),
                         ),
                       ),
-                      SizedBox(
-                        height: 40,
-                      ),
+                      SizedBox(height: 40),
                       new GestureDetector(
                         onTap: () {},
                         child: Container(
@@ -126,10 +87,7 @@ class _LoginPageState extends State<LoginPage> {
                           color: Colors.black87,
                           alignment: Alignment.center,
                           child: BigText(
-                            text: "Login",
-                            size: 17,
-                            color: Colors.white,
-                          ),
+                              text: "Login", size: 17, color: Colors.white),
                         ),
                       ),
                     ],

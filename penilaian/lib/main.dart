@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:penilaian/page/Jurusan/Jurusan-main.dart';
 import 'package:penilaian/page/auth/login-page.dart';
-import 'package:penilaian/page/home/home-page.dart';
+import 'package:penilaian/page/home/home-pageGU.dart';
+import 'package:penilaian/page/siswa/SiswaList.dart';
+import 'package:penilaian/page/siswa/SiswaMainPage.dart';
 
 void main() {
   runApp(const MyApp());
@@ -15,7 +18,7 @@ class MyApp extends StatelessWidget {
     // ignore: prefer_const_constructors
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: HomePageGU(),
+      home: const SiswaMainPage(),
     );
   }
 }

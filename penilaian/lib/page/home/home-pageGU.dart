@@ -1,15 +1,13 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors
 import 'package:flutter/material.dart';
-import 'package:penilaian/widget/bigText.dart';
+import 'package:penilaian/util/colors.dart';
+import 'package:penilaian/widget/BigText.dart';
+import 'package:penilaian/widget/TextStryle.dart';
+import 'package:penilaian/widget/header.dart';
 
-class HomePageGU extends StatefulWidget {
+class HomePageGU extends StatelessWidget {
   const HomePageGU({super.key});
 
-  @override
-  State<HomePageGU> createState() => _HomePageGUState();
-}
-
-class _HomePageGUState extends State<HomePageGU> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -20,55 +18,17 @@ class _HomePageGUState extends State<HomePageGU> {
           gradient: LinearGradient(
             begin: Alignment.centerLeft,
             end: Alignment.bottomRight,
-            colors: [
-              Color.fromARGB(255, 222, 100, 187),
-              Color.fromARGB(255, 226, 213, 114)
-            ],
+            colors: [AppColors.backgroundcolor1, AppColors.backgroundcolor2],
           ),
         ),
         child: SingleChildScrollView(
           child: Column(
             children: [
+              Heder(),
               Container(
-                padding:
-                    EdgeInsets.only(left: 40, right: 40, top: 15, bottom: 15),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    BigText(
-                      text: "E'Task",
-                      size: 25,
-                    ),
-                    SizedBox(
-                      child: Row(
-                        children: [
-                          Icon(
-                            Icons.logout_outlined,
-                            size: 30,
-                          ),
-                          // SizedBox(
-                          //   width: 20,
-                          // ),
-                          // Icon(
-                          //   Icons.search_outlined,
-                          //   size: 30,
-                          // ),
-                        ],
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-              Container(
-                color: Colors.black,
-                width: double.maxFinite,
-                height: 1,
-              ),
+                  color: Colors.black, width: double.maxFinite, height: 1),
               SizedBox(height: 10),
-              BigText(
-                text: "Hello User !",
-                size: 35,
-              ),
+              TextSty(text: "Hello User !", size: 35, color: Colors.black),
               SizedBox(height: 20),
               Container(
                 padding: EdgeInsets.all(20),
@@ -85,26 +45,16 @@ class _HomePageGUState extends State<HomePageGU> {
                 child: Column(
                   children: [
                     Text("- Quotes Of The Day -"),
-                    SizedBox(
-                      height: 20,
-                    ),
+                    SizedBox(height: 20),
                     Text(" \" Alasan Dapat Dibuat \" "),
                     Text(" 01 - 01 - 1111 "),
                   ],
                 ),
               ),
-              SizedBox(
-                height: 20,
-              ),
-              Text(
-                "PILIH TINGKAT KELAS :",
-                style: TextStyle(
-                  fontSize: 25,
-                ),
-              ),
-              SizedBox(
-                height: 20,
-              ),
+              SizedBox(height: 20),
+              BigText(
+                  text: "PILIH TINGKAT KELAS :", size: 25, color: Colors.black),
+              SizedBox(height: 20),
               Container(
                 padding: EdgeInsets.all(20),
                 width: double.maxFinite,
@@ -127,22 +77,11 @@ class _HomePageGUState extends State<HomePageGU> {
                         decoration: BoxDecoration(
                           color: Color.fromARGB(255, 12, 150, 91),
                           borderRadius: BorderRadius.all(
-                            Radius.circular(13),
+                            Radius.circular(13)
                           ),
-                          // gradient: LinearGradient(
-                          //   begin: Alignment.topCenter,
-                          //   end: Alignment.bottomCenter,
-                          //   colors: [
-                          //     Color.fromARGB(255, 15, 23, 143),
-                          //     Color.fromARGB(255, 69, 29, 58)
-                          //   ],
-                          // ),
                         ),
                         child: BigText(
-                          text: "Kelas X",
-                          size: 20,
-                          color: Colors.white,
-                        ),
+                            text: "Kelas X", size: 20, color: Colors.white),
                       ),
                     ),
                     SizedBox(height: 15),
@@ -157,20 +96,9 @@ class _HomePageGUState extends State<HomePageGU> {
                           borderRadius: BorderRadius.all(
                             Radius.circular(13),
                           ),
-                          // gradient: LinearGradient(
-                          //   begin: Alignment.topCenter,
-                          //   end: Alignment.bottomCenter,
-                          //   colors: [
-                          //     Color.fromARGB(255, 15, 23, 143),
-                          //     Color.fromARGB(255, 69, 29, 58)
-                          //   ],
-                          // ),
                         ),
                         child: BigText(
-                          text: "Kelas XI",
-                          size: 20,
-                          color: Colors.white,
-                        ),
+                            text: "Kelas XI", size: 20, color: Colors.white),
                       ),
                     ),
                     SizedBox(height: 15),
@@ -195,10 +123,7 @@ class _HomePageGUState extends State<HomePageGU> {
                           // ),
                         ),
                         child: BigText(
-                          text: "Kelas XII",
-                          size: 20,
-                          color: Colors.white,
-                        ),
+                            text: "Kelas XII", size: 20, color: Colors.white),
                       ),
                     ),
                   ],

@@ -1,16 +1,16 @@
+// ignore_for_file: file_names, must_be_immutable
 
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:penilaian/util/dimensions.dart';
 
-class BigText extends StatelessWidget {
+class TextSty extends StatelessWidget {
   Color? color;
   final String text;
   double size;
   TextOverflow overFlow;
-  BigText(
+  TextSty(
       {Key? key,
-      this.color = Colors.black,
+      this.color = Colors.white,
       required this.text,
       this.size = 0,
       this.overFlow = TextOverflow.ellipsis})
@@ -23,20 +23,10 @@ class BigText extends StatelessWidget {
       maxLines: 1,
       overflow: overFlow,
       style: TextStyle(
-        color: color,
-        fontSize: size == 0? Dimentions.font20 : size,
-        fontWeight: FontWeight.w400,
-        fontFamily: 'roboto'
-      ),
+          color: color,
+          fontSize: size == 0 ? Dimentions.font20 : size,
+          fontWeight: FontWeight.w400,
+          fontFamily: 'Milenia'),
     );
-  }
-}
-
-class SmallText extends StatelessWidget {
-  const SmallText({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return const Placeholder();
   }
 }
