@@ -1,7 +1,7 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors
 
 import 'package:flutter/material.dart';
-import 'package:penilaian/page/Jurusan/Jurusan-listPage.dart';
+import 'JurusanList.dart';
 import 'package:penilaian/util/colors.dart';
 import 'package:penilaian/widget/TextStryle.dart';
 import 'package:penilaian/widget/textField.dart';
@@ -35,13 +35,17 @@ class JurusanMainPageState extends State<JurusanMainPage> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  TextSty(text: "E'Task", size: 25),
+                  TextSty(
+                    text: "E'Task",
+                    size: 25,
+                    color: Colors.black,
+                  ),
                   SizedBox(
                     child: Row(
                       children: [
                         Icon(Icons.logout_outlined, size: 30),
                         SizedBox(width: 20),
-                        Icon(Icons.person_2_outlined, size: 30),
+                        Icon(Icons.person_outline, size: 30),
                       ],
                     ),
                   ),
@@ -50,8 +54,7 @@ class JurusanMainPageState extends State<JurusanMainPage> {
             ),
             Container(color: Colors.black, width: double.maxFinite, height: 1),
             Padding(
-              padding:
-                  EdgeInsets.only(left: 30, right: 30, top: 20, bottom: 20),
+              padding: EdgeInsets.only(left: 30, right: 30, top: 20),
               child: TextfieldW(hint: "Cari"),
             ),
             Expanded(child: SingleChildScrollView(child: JurusanList()))
@@ -60,4 +63,6 @@ class JurusanMainPageState extends State<JurusanMainPage> {
       ),
     );
   }
+
+
 }

@@ -1,13 +1,13 @@
 // ignore_for_file: constant_identifier_names
 
 class AppConstants {
-  static const String APP_NAME = "DBFood";
+  static const String APP_NAME = "E-Task";
   static const int APP_VERSION = 1;
 
-  static const String BASE_URL = "http://mvs.bslmeiyu.com";
-  static const String POPULAR_PRODUCT_URI = "/api/v1/products/popular";
-  static const String RECOMMENDED_PRODUCT_URI = "/api/v1/products/recommended";
-  static const String UPLOAD_URL = "/uploads/";
+  static const String BASE_URL = "https://crud-7e631-default-rtdb.firebaseio.com";
+  static const String KELAS_URI = "/kelas";
+  static const String SISWA_URI = "/siswa";
+  // static const String PHOTO_URI = "/uploads/";
 
   static const String TOKEN = "DBtoken";
 }

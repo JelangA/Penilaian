@@ -1,5 +1,7 @@
 // ignore_for_file: file_names, prefer_const_constructors, prefer_const_literals_to_create_immutables, unnecessary_new
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:penilaian/routes/RouteHelper.dart';
 import 'package:penilaian/util/colors.dart';
 import 'package:penilaian/widget/BigTextt.dart';
 
@@ -35,7 +37,9 @@ class _LoginPageState extends State<LoginPage> {
         child: SingleChildScrollView(
           child: Column(
             children: <Widget>[
-              SizedBox(height: 20),
+              SizedBox(
+                height: 120,
+              ),
               TextSty(text: "E-Task", size: 40),
               BigText(
                   text: "MAKE EASIER BECOME GREAT EARLIER",
@@ -69,9 +73,9 @@ class _LoginPageState extends State<LoginPage> {
                           filled: true,
                           fillColor: Colors.white,
                           enabledBorder: OutlineInputBorder(
-                            borderSide:
-                                BorderSide(color: Colors.white) //<-- SEE HERE
-                          ),
+                              borderSide:
+                                  BorderSide(color: Colors.white) //<-- SEE HERE
+                              ),
                           // border: OutlineInputBorder(),
                           suffixIcon: InkWell(
                               onTap: toggleViewPassword,
@@ -80,7 +84,10 @@ class _LoginPageState extends State<LoginPage> {
                       ),
                       SizedBox(height: 40),
                       new GestureDetector(
-                        onTap: () {},
+                        onTap: () {
+                          print("tapp");
+                          Get.toNamed(RouteHelper.getHomepageGu());
+                        },
                         child: Container(
                           width: 120,
                           height: 40,

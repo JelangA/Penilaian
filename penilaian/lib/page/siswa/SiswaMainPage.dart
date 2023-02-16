@@ -1,12 +1,9 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors
 
 import 'package:flutter/material.dart';
-import 'package:penilaian/page/Jurusan/Jurusan-listPage.dart';
 import 'package:penilaian/page/siswa/SiswaList.dart';
 import 'package:penilaian/util/colors.dart';
 import 'package:penilaian/widget/BigTextt.dart';
-import 'package:penilaian/widget/TextStryle.dart';
-import 'package:penilaian/widget/container.dart';
 import 'package:penilaian/widget/header.dart';
 import 'package:penilaian/widget/textField.dart';
 
@@ -44,7 +41,7 @@ class SiswaMainPageState extends State<SiswaMainPage> {
               child: TextfieldW(hint: "Cari"),
             ),
             Container(
-              margin: EdgeInsets.only(left: 30, right: 30, bottom: 20),
+              margin: EdgeInsets.only(left: 30, right: 30),
               height: 50,
               width: double.maxFinite,
               color: AppColors.maincolor,

@@ -1,7 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:penilaian/page/Jurusan/Jurusan-main.dart';
+import 'package:get/get.dart';
 import 'package:penilaian/page/auth/login-page.dart';
 import 'package:penilaian/page/home/home-pageGU.dart';
+import 'package:penilaian/page/jurusan/JurusanMainPage.dart';
+import 'package:penilaian/page/task/TaskDetail.dart';
+import 'package:penilaian/page/task/TaskList.dart';
+import 'package:penilaian/page/task/TaskMainPage.dart';
+import 'package:penilaian/routes/RouteHelper.dart';
 import 'package:penilaian/page/siswa/SiswaList.dart';
 import 'package:penilaian/page/siswa/SiswaMainPage.dart';
 
@@ -16,9 +21,12 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // ignore: prefer_const_constructors
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: const SiswaMainPage(),
+    return GetMaterialApp(
+      // debugShowCheckedModeBanner: false,
+      // initialRoute: RouteHelper.getInitialPage(),
+      // getPages: RouteHelper.routes,
+      home: SiswaMainPage(),
+      
     );
   }
 }

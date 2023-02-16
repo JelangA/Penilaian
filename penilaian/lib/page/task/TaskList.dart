@@ -10,59 +10,65 @@ class TaskList extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(children: [
       SizedBox(
-        height: 700,
         child: ListView.builder(
-          // shrinkWrap: true,
+          shrinkWrap: true,
           physics: NeverScrollableScrollPhysics(),
           itemCount: 10,
           itemBuilder: (context, index) {
-            return Container(
-              height: 80,
-              decoration: BoxDecoration(
-                  color: Color.fromARGB(255, 255, 248, 248).withOpacity(0.2),
-                  borderRadius: BorderRadius.circular(20)),
-              margin: EdgeInsets.only(left: 20, right: 20, top: 5, bottom: 5),
-              child:
-                  Row(crossAxisAlignment: CrossAxisAlignment.start, children: [
-                Container(
-                  margin: EdgeInsets.only(left: 20, top: 7, bottom: 7),
-                  width: 60,
-                  height: 90,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(15),
-                    color: Colors.red,
-                    image: DecorationImage(
-                      fit: BoxFit.cover,
-                      image: AssetImage("assets/images/bangkong.jpg"),
-                    ),
-                  ),
-                ),
-                Expanded(
-                  child: Container(
-                    height: double.maxFinite,
-                    decoration: BoxDecoration(
-                      // color: Colors.red,
-                      borderRadius: BorderRadius.only(
-                        topRight: Radius.circular(20),
-                        bottomRight: Radius.circular(20),
+            return GestureDetector(
+              onTap: () {
+                
+              },
+              child: Container(
+                height: 100,
+                decoration: BoxDecoration(
+                    color: Color.fromARGB(255, 255, 248, 248).withOpacity(0.2),
+                    borderRadius: BorderRadius.circular(20)),
+                margin: EdgeInsets.only(left: 20, right: 20, top: 5, bottom: 5),
+                child:
+                    Row(crossAxisAlignment: CrossAxisAlignment.start, children: [
+                  Expanded(
+                    child: Container(
+                      height: double.maxFinite,
+                      decoration: BoxDecoration(
+                        // color: Colors.red,
+                        borderRadius: BorderRadius.only(
+                          topRight: Radius.circular(20),
+                          bottomRight: Radius.circular(20),
+                        ),
                       ),
-                    ),
-                    child: Padding(
-                      padding: const EdgeInsets.only(left: 20, right: 10),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        mainAxisAlignment: MainAxisAlignment.center,
+                      child: Row(
                         children: [
-                          BigText(text: "Jelang Anugrah Raharjo", size: 12),
-                          BigText(text: "XII RPL", size: 12),
-                          BigText(text: "Laki - Laki", size: 12),
-                          BigText(text: "201021510", size: 12)
+                          Container(
+                            padding: const EdgeInsets.only(left: 50, bottom: 10),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                BigText(text: "Modul PPKN 2.03", size: 26),
+                                Row(
+                                  children: [
+                                    BigText(text: "Tanggal Tugas : ", size: 13),
+                                    BigText(text: "11 / 11 / 2022", size: 13),
+                                  ],
+                                ),
+                                Row(
+                                  children: [
+                                    BigText(text: "Tenggat Tugas : ", size: 13),
+                                    BigText(text: "12 / 23 / 2023", size: 13),
+                                  ],
+                                ),
+                              ],
+                            ),
+                          ),
+                          SizedBox(width: 100,),
+                          Icon(Icons.verified_outlined, size: 50,)
                         ],
                       ),
                     ),
                   ),
-                ),
-              ]),
+                ]),
+              ),
             );
           },
         ),
