@@ -1,14 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:penilaian/page/auth/login-page.dart';
-import 'package:penilaian/page/home/home-pageGU.dart';
-import 'package:penilaian/page/jurusan/JurusanMainPage.dart';
-import 'package:penilaian/page/task/TaskDetail.dart';
-import 'package:penilaian/page/task/TaskList.dart';
-import 'package:penilaian/page/task/TaskMainPage.dart';
+import 'package:penilaian/controller/kelas_controller.dart';
 import 'package:penilaian/routes/RouteHelper.dart';
-import 'package:penilaian/page/siswa/SiswaList.dart';
-import 'package:penilaian/page/siswa/SiswaMainPage.dart';
 import 'helper/dependencies.dart' as dep;
 
 Future<void> main() async {
@@ -23,6 +16,7 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+    Get.find<KelasController>().getKelasList();
     // ignore: prefer_const_constructors
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,

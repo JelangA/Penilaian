@@ -7,9 +7,7 @@ class KelasRepo extends GetxService {
 
   KelasRepo({required this.apiClient});
 
-  Future<Response> getkelasList() async { 
-    return await apiClient.getData(AppConstants.KELAS_URL);
+  Future<Response> getkelasList() async {
+    return await apiClient.getData(AppConstants.KELAS_URI);
   }
-
-  
 }

@@ -4,16 +4,32 @@
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:penilaian/page/jurusan/JurusanMainPage.dart';
+import 'package:penilaian/controller/kelas_controller.dart';
 import 'package:penilaian/routes/RouteHelper.dart';
 import 'package:penilaian/widget/BigTextt.dart';
-import 'package:penilaian/widget/TextStryle.dart';
-import 'package:penilaian/widget/textField.dart';
 
 class JurusanList extends StatelessWidget {
   JurusanList({super.key});
 
   List<Color> listcolor = [
+    Colors.red,
+    Colors.green,
+    Colors.blue,
+    Colors.yellow,
+    Colors.teal,
+    Colors.pink,
+    Colors.red,
+    Colors.green,
+    Colors.blue,
+    Colors.yellow,
+    Colors.teal,
+    Colors.pink,
+    Colors.red,
+    Colors.green,
+    Colors.blue,
+    Colors.yellow,
+    Colors.teal,
+    Colors.pink,
     Colors.red,
     Colors.green,
     Colors.blue,
@@ -66,34 +82,37 @@ class JurusanList extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        ListView.builder(
-          physics: NeverScrollableScrollPhysics(),
-          shrinkWrap: true,
-          itemCount: ListJurusan.length,
-          itemBuilder: (context, index) {
-            return GestureDetector(
-              onTap: () {
-                // Get.toNamed(RouteHelper.getSiswaPage());
-                openDialog();
-              },
-              child: Container(
-                margin: EdgeInsets.only(left: 20, right: 20, top: 5, bottom: 5),
-                child: Center(
-                  child: Container(
-                    alignment: Alignment.center,
-                    height: 80,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(20),
-                      color:
-                          Color.fromARGB(255, 202, 196, 192).withOpacity(0.5),
+        GetBuilder<KelasController>(builder:(kelass) {
+          return ListView.builder(
+            physics: NeverScrollableScrollPhysics(),
+            shrinkWrap: true,
+            itemCount: kelass.kelasList.length,
+            itemBuilder: (context, index) {
+              return GestureDetector(
+                onTap: () { 
+                  // Get.toNamed(RouteHelper.getSiswaPage());
+                  openDialog();
+                },
+                child: Container(
+                  margin:
+                      EdgeInsets.only(left: 20, right: 20, top: 5, bottom: 5),
+                  child: Center(
+                    child: Container(
+                      alignment: Alignment.center,
+                      height: 80,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(20),
+                        color:
+                            Color.fromARGB(255, 202, 196, 192).withOpacity(0.5),
+                      ),
+                      child: BigText(text: kelass.kelasList[index].jurusan!, size: 25),
                     ),
-                    child: ListJurusan[index],
                   ),
                 ),
-              ),
-            );
-          },
-        )
+              );
+            },
+          );
+        }),
       ],
     );
   }
