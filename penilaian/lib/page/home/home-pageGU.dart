@@ -71,7 +71,6 @@ class HomePageGU extends StatelessWidget {
                     GestureDetector(
                       onTap: () {
                         Get.toNamed(RouteHelper.getJurusanPage());
-                        print('tapp');
                       },
                       child: Container(
                         alignment: Alignment.center,

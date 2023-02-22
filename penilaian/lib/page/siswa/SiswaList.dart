@@ -10,23 +10,6 @@ import 'package:penilaian/widget/textField.dart';
 class SiswaList extends StatelessWidget {
   SiswaList({super.key});
 
-  Map mymap = {
-    "jurusan": {
-      "Listrik": {
-        "Listrik1": {"1101": "jelang listrik1", "1102": "haritza listrik2"},
-        "listrik2": {"1201": "haritza listrik2", "1202": "jelang listrik2"}
-      },
-      "RPL": {
-        "RPL1": {"2101": "jelang rpl1", "2102": "haritza rpl1"},
-        "RPL2": {"2201": "jelang rpl2", "2202": "haritza rpl2"}
-      },
-      "TKJ": {
-        "TKJ1": {"3101": "jelang rkj1", "3102": "haritza tkj1"},
-        "TKJ2": {"3201": "jelang tkj2", "3202": "haritza tkj2"}
-      }
-    }
-  };
-
   @override
   Widget build(BuildContext context) {
     return Column(children: [

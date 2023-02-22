@@ -9,8 +9,11 @@ import 'package:penilaian/page/task/TaskMainPage.dart';
 import 'package:penilaian/routes/RouteHelper.dart';
 import 'package:penilaian/page/siswa/SiswaList.dart';
 import 'package:penilaian/page/siswa/SiswaMainPage.dart';
+import 'helper/dependencies.dart' as dep;
 
-void main() {
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await dep.init();
   runApp(const MyApp());
 }
 
@@ -22,11 +25,10 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     // ignore: prefer_const_constructors
     return GetMaterialApp(
-      // debugShowCheckedModeBanner: false,
-      // initialRoute: RouteHelper.getInitialPage(),
-      // getPages: RouteHelper.routes,
-      home: SiswaMainPage(),
-      
+      debugShowCheckedModeBanner: false,
+      initialRoute: RouteHelper.getInitialPage(),
+      getPages: RouteHelper.routes,
+      // home: SiswaMainPage(),
     );
   }
 }

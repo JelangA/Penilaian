@@ -85,7 +85,7 @@ class TaskMainPageState extends State<TaskMainPage> {
                       items: list.map<DropdownMenuItem<String>>((String value) {
                         return DropdownMenuItem<String>(
                           value: value,
-                          child: Text(value),                        );
+                          child: Text(value),);
                       }).toList(),
                     ),
                   ]),
