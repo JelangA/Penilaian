@@ -1,14 +1,14 @@
-// import 'package:get/get.dart';
-// import 'package:penilaian/data/api/api_client.dart';
-// import 'package:penilaian/util/appconst.dart';
+import 'package:get/get.dart';
+import 'package:penilaian/data/api/api_client.dart';
+import 'package:penilaian/util/appconst.dart';
 
-// class SiwaRepo extends GetxService {
-//   final ApiClient apiClient;
+class SiswaRepo extends GetxService {
+  final ApiClient apiClient;
 
-//   SiwaRepo({required this.apiClient});
+  SiswaRepo({required this.apiClient});
 
-//   Future<Response> getPopularProductList() async { 
-//     return await apiClient.getData(AppConstants.SISWA_URI);
-//   }
+  Future<Response> getsiswatList() async { 
+    return await apiClient.getData(AppConstants.SISWA_URI);
+  }
   
-// }
+}

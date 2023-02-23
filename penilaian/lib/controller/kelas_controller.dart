@@ -4,10 +4,11 @@ import 'package:penilaian/model/kelas_model.dart';
 
 class KelasController extends GetxController {
   final KelasRepo kelasRepo;
-
+  
   KelasController({required this.kelasRepo});
   List<dynamic> _kelasList = [];
   List<dynamic> get kelasList => _kelasList;
+  String? dataFilter;
 
   Future<void> getKelasList() async {
     Response response = await kelasRepo.getkelasList();
@@ -19,4 +20,6 @@ class KelasController extends GetxController {
       update();
     } else {}
   }
+
+  void filterlist() {}
 }

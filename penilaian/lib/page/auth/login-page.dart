@@ -1,10 +1,12 @@
 // ignore_for_file: file_names, prefer_const_constructors, prefer_const_literals_to_create_immutables, unnecessary_new
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:penilaian/routes/RouteHelper.dart';
 import 'package:penilaian/util/colors.dart';
 import 'package:penilaian/widget/BigTextt.dart';
-
+import 'package:http/http.dart' as http;
 import 'package:penilaian/widget/TextStryle.dart';
 import 'package:penilaian/widget/textField.dart';
 
@@ -16,7 +18,34 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
+  String? _idToken;
+  String? _tempidToken;
+
   bool ishiddenPassword = true;
+
+  Future<void> login() async {
+    // var response = await http.post(Uri.parse("http://127.0.0.1:8000/api/login"),
+
+    ///url mobile
+    var response = await http.post(Uri.parse("https://reqres.in/api/login"),
+        body: ({
+          'email': emailController.text,
+          'password': passContrloller.text
+        }));
+
+    var responeData = json.decode(response.body);
+
+    _tempidToken = responeData['token'];
+
+    if (response.statusCode == 200) {
+      Get.toNamed(RouteHelper.getHomepageGu());
+      ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text("login berhasil")));
+    } else {
+      ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text(responeData['error'].toString())));
+    }
+  }
 
   var emailController = TextEditingController();
   var passContrloller = TextEditingController();
@@ -61,7 +90,19 @@ class _LoginPageState extends State<LoginPage> {
                     children: [
                       BigText(text: "Username", size: 17, color: Colors.black),
                       SizedBox(height: 10),
-                      TextfieldW(hint: "Username"),
+                      TextFormField(
+                        controller: emailController,
+                        decoration: InputDecoration(
+                          hintText: "Email",
+                          filled: true,
+                          fillColor: Colors.white,
+                          enabledBorder: OutlineInputBorder(
+                              borderSide:
+                                  BorderSide(color: Colors.white) //<-- SEE HERE
+                              ),
+                          // border: OutlineInputBorder(),
+                        ),
+                      ),
                       SizedBox(height: 20),
                       BigText(text: "password", size: 17, color: Colors.black),
                       SizedBox(height: 10),
@@ -85,8 +126,7 @@ class _LoginPageState extends State<LoginPage> {
                       SizedBox(height: 40),
                       new GestureDetector(
                         onTap: () {
-                          print("tapp");
-                          Get.toNamed(RouteHelper.getHomepageGu());
+                          login();
                         },
                         child: Container(
                           width: 120,
